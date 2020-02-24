@@ -1,0 +1,30 @@
+<h1 class=" text-center "> {{heroe.nombre.toUpperCase() }}<small> - ({{ heroe.aparicion | date:'y'}}) </small>
+    <hr>
+    <hr width="50%">
+    <br>
+
+
+
+    <div class="card mb-4 text-center">
+        <div class=" row no-gutters animated fadeIn">
+
+            <div class="col-md-4">
+                <img src=" {{ heroe.img }} " class="card-img" alt=" {{heroe.nombre}} ">
+
+                <a href="./heroes" class=" btn btn-outline-primary container">Regresar</a>
+            </div>
+
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title">{{heroe.nombre}}</h5>
+                    <hr>
+                    <h6 class="card-text text-justify">{{ heroe.bio}}</h6>
+                    <h6 class="card-text text-lg-left"> Fecha de aparicion: {{ heroe.aparicion }} </h6>
+                    <div>
+                        <img *ngIf="heroe.casa == 'Marvel'" class="img-logo" src="assets/img/Marvel.png" alt="Marvel">
+                        <img *ngIf="heroe.casa == 'DC'" class="img-logo" src="assets/img/Dc.jpg" alt="Dc">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

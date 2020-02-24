@@ -1,0 +1,27 @@
+<h1>Buscando: <small> {{ termino.toUpperCase()}} </small></h1>
+<br>
+<hr>
+<!-- Alerta, si no ay resultados.-->
+
+<div class="row animated fadeIn fast" *ngIf="heroes.length == 0">
+    <div class=" col-md-12 ">
+        <div class="alert alert-info" role="alert">
+            No existe resultado con el termino: {{ termino }}.
+        </div>
+    </div>
+</div>
+
+<div class="card-columns">
+    <div class="card  animated fadeIn fast" *ngFor="let superhombres of heroes; let i = index ">
+        <img class="card-img-top img-fluid " src="{{ superhombres.img }}" alt=" {{ superhombres.nombre }} ">
+        <div class="card-block">
+            <h5 class="card-title"> {{ superhombres.nombre }} </h5>
+            <p class="card-text  text-center "> {{ superhombres.bio }} </p>
+            <p class="card-text text-center"><small class="text-muted"> {{ superhombres.aparicion }} </small></p>
+
+            <a [routerLink]=" ['/heroe', i ] " class=" btn btn-outline-primary container ">Ver Más</a>
+
+        </div>
+    </div>
+
+</div>

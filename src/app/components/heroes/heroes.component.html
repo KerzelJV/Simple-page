@@ -1,0 +1,17 @@
+<h1>Héroes <small>Marvel y Dc</small></h1>
+<br>
+<hr>
+<div class="card-columns">
+    <div class="card  animated fadeIn fast" *ngFor="let superhombres of heroes; let i = index ">
+        <img class="card-img-top img-fluid " src="{{ superhombres.img }}" alt=" {{ superhombres.nombre }} ">
+        <div class="card-block">
+            <h5 class="card-title"> {{ superhombres.nombre }} </h5>
+            <p class="card-text  text-center "> {{ superhombres.bio }} </p>
+            <p class="card-text text-center"><small class="text-muted"> {{ superhombres.aparicion }} </small></p>
+
+            <a [routerLink]=" ['/heroe', i ] " class=" btn btn-outline-primary container ">Ver Más</a>
+
+        </div>
+    </div>
+
+</div>
